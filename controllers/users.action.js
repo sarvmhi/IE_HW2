@@ -1,4 +1,5 @@
 import models from "../models/index.js";
+import { validateUser } from "../utils/validator.js";
 
 const {
     EduManagerModel,
@@ -10,7 +11,7 @@ const {
 
 export const addProfessor = async (professorData) => {
     try {
-        if (professorData?.firstName?.length > 0) {
+        if (validateUser(professorData)) {
             const professor = new ProfessorModel({
                 ...professorData,
                 __t: "professor",

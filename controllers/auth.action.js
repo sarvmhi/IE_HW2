@@ -1,7 +1,7 @@
 import models from "../models/index.js";
 import {comparePasswordHash, generatePasswordHash} from "../utils/hash.js";
 import {generateAccessToken} from "../utils/jwt.js";
-import {validateEmail, validatePassword} from "../utils/helpers.js";
+import { validateEmail, validateId, validatePassword, validateUser } from "../utils/validator.js";
 
 const {
     UserModel,
@@ -14,7 +14,7 @@ const {
 export const loginUser = async (id = "", password = "") => {
     try {
         console.log("login =>", id, password);
-        if (id?.length > 0 && validatePassword(password)) {
+        if (validateId(id) && validatePassword(password)) {
             const user = await UserModel.findOne({id});
             if (await comparePasswordHash(user.password, password)) {
                 const token = generateAccessToken({
@@ -36,7 +36,7 @@ export const loginUser = async (id = "", password = "") => {
 export const registerUser = async (registerData, type = "") => {
     try {
         // Validate Email and Password
-        if (registerData?.id?.length > 0 && validatePassword(registerData?.password)) {
+        if (validateUser(registerData)) {
             // Check if account already exists
             const existingUser = await UserModel.findOne({
                 id: registerData.id,
