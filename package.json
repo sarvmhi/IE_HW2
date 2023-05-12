@@ -1,18 +1,30 @@
 {
-  "name": "registersystem",
-  "version": "1.0.0",
-  "description": "Node.js Restful CRUD API with Node.js, Express and MongoDB",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^7.0.4"
-  }
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
+        "mongodb": "^5.5.0",
+        "mongoose": "^7.1.0",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.22",
+        "swagger-autogen": "^2.23.1",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^4.6.2"
+    },
+    "name": "learning-system",
+    "version": "1.0.1",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon main.js",
+        "swagger": "node swagger.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "type": "module",
+    "module": "es6"
 }
