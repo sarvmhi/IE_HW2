@@ -30,7 +30,7 @@ courseRouter.delete(
     removeStudentFromCourseHandler,
 );
 
-//
+// add student to course
 export default (app) => {
     app.use("/",courseRouter);
 };
