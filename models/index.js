@@ -11,6 +11,8 @@ COURSE_MODELS.CourseModel.watch().on("change", (data) =>
     console.log(new Date(), data),
 );
 
+// Export model 
+
 export default {
     UserModel: USER_MODELS.UserModel,
     StudentModel: USER_MODELS.StudentModel,
