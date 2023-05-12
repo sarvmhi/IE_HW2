@@ -21,6 +21,7 @@ import {
     getStudents,
 } from "./users.action.js";
 
+// to do: add auth to all functions
 export const getStudentsHandler = async (req, res) => {
     try {
         if (
