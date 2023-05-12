@@ -27,6 +27,8 @@ const CourseSchema = new Schema({
 
 const CourseModel = mongoose_client.model("course", CourseSchema);
 
+// Create Term Course Schema
+
 const TermCourseModel = CourseModel.discriminator(
     "termcourse",
     new Schema({
