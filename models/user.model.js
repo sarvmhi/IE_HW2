@@ -2,6 +2,8 @@ import {mongoose_client} from "../utils/mongo.js";
 const Schema = mongoose_client.Schema;
 const options = {discriminatorKey: "kind"};
 
+// discriminatorKey: "kind" is used to differentiate between the different types of users
+
 const UserSchema = new Schema({
     firstName: {
         type: String,
