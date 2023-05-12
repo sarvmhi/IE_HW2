@@ -409,6 +409,89 @@
                 }
             }
         },
+        "/admin/manager/{id}":{
+            "put": {
+                "tags": ["users"],
+                "summary": "put EDU Manager Handler",
+                "description": "This endpoint is used to add EDU manager handler.",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User credentials",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["users"],
+                "summary": "get EDU Manager Handler",
+                "description": "This endpoint is used to add EDU manager handler.",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["users"],
+                "summary": "delete EDU Manager Handler",
+                "description": "This endpoint is used to add EDU manager handler.",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
         "/course/{id}": {
             "get": {
                 "description": "",
@@ -642,33 +725,6 @@
                         "schema": {
                             "$ref": "#/definitions/userLoginData"
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response"
-                    }
-                }
-            }
-        },
-        "/register/{type}": {
-            "post": {
-                "x-swagger-router-controller": "register",
-                "summary": "Register user",
-                "consumes": ["application/json"],
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "type",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "User",
-                        "description": "User credentials",
-                        "required": true,
-                        "type": "object"
                     }
                 ],
                 "responses": {

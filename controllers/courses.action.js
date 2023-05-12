@@ -2,7 +2,6 @@ import models from "../models/index.js";
 
 const {CourseModel, TermCourseModel} = models;
 
-// to add course
 export const addCourse = async (courseData, is_term = false) => {
     try {
         if (courseData?.name?.length > 0) {
@@ -21,7 +20,6 @@ export const addCourse = async (courseData, is_term = false) => {
     }
 };
 
-// to get course
 export const getCourse = async (id) => {
     try {
         if (id?.length > 0) {

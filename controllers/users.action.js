@@ -9,7 +9,6 @@ const {
     UserModel,
 } = models;
 
-// to add new user
 export const addProfessor = async (professorData) => {
     try {
         if (validateUser(professorData)) {

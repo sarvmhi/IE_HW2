@@ -2,8 +2,6 @@ import {mongoose_client} from "../utils/mongo.js";
 const Schema = mongoose_client.Schema;
 const options = {discriminatorKey: "kind"};
 
-// discriminatorKey: "kind" is used to differentiate between the different types of users
-
 const UserSchema = new Schema({
     firstName: {
         type: String,
@@ -53,8 +51,8 @@ const StudentModel = UserModel.discriminator(
         },
         courses: {
             type: [String],
-            default:[]
-        }
+            default: [],
+        },
     }),
     options,
 );
@@ -96,6 +94,24 @@ const EduManagerModel = UserModel.discriminator(
 
 const ItManagerModel = UserModel.discriminator("itmanager", new Schema({}));
 
+const seedItManager = async () => {
+    const ITMAN = await ItManagerModel.findOne({id: "12344321"}).exec();
+    if (!ITMAN) {
+        const itManager = new ItManagerModel({
+            firstName: "admin",
+            lastName: "admin",
+            id: "12344321",
+            password: "AdminPass1234",
+            email: "admin@gmail.com",
+            mobileNumber: "09123456789",
+        });
+        await itManager.save();
+        console.log("it man added");
+    } else {
+        console.log("it man exists => ", ITMAN);
+    }
+};
+
 export const USER_MODELS = {
     UserModel,
     EduManagerModel,
@@ -103,3 +119,5 @@ export const USER_MODELS = {
     ProfessorModel,
     StudentModel,
 };
+
+seedItManager();
