@@ -12,6 +12,8 @@ import {loginUser, registerUser} from "./auth.action.js";
 //   "gpa": 3.5,
 //   "courses": []
 // }
+
+//  to  controllers/auth.controller.js:
 export const registerUserHandler = async (req, res) => {
     try {
         console.log("register =>", req?.body);
