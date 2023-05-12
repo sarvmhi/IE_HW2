@@ -11,6 +11,7 @@ const {
     StudentModel,
 } = models;
 
+// todo: add login and register for all users
 export const loginUser = async (id = "", password = "") => {
     try {
         console.log("login =>", id, password);
