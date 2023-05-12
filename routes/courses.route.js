@@ -22,12 +22,15 @@ courseRouter.post(
     authenticateToken,
     addStudentToCourseHandler,
 );
+//  remove student from course
+
 courseRouter.delete(
     "/course/:id/student",
     authenticateToken,
     removeStudentFromCourseHandler,
 );
 
+//
 export default (app) => {
     app.use("/",courseRouter);
 };
